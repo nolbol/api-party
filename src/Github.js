@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Github.css'
 import { Route } from 'react-router-dom'
+import GithubUser from './GithubUser.js'
 
 class Github extends Component {
     state = {
@@ -36,7 +37,7 @@ handleSubmit = (ev) => {
             <button type="submit">Look up Github user</button>
           </div>
         </form>
-        <Route path="/github/:username" render={(props) => <h3>You searched for {props.match.params.username}</h3> }/>
+        <Route path="/github/:username" component={GithubUser}/>
         <Route exact path="/github" render={() => <h3>Please entter a username to search on Github.</h3>}/>
         
         </div>
